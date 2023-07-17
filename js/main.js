@@ -3,7 +3,12 @@ document.getElementById('getButton').addEventListener('click', apiRequest)
 async function apiRequest(){
     const alienName = document.querySelector('input').value
     try{
-        const response = await fetch(`https://star-trek-api-rps7.onrender.com/api/${alienName}`)
+        //connect to backend with the db in the server.js
+        //const response = await fetch(`https://star-trek-api-rps7.onrender.com/api/${alienName}`)
+
+        //OR connect to backend thats got info on mongodb!!!
+        const response = await fetch(`https://star-trek-api-mongo-main.onrender.com/api/${alienName}`)
+        
         const data = await response.json()
 
         console.log(data)
